@@ -92,16 +92,4 @@ class _SplashScreenState extends State<SplashScreen>
   }
 }
 
-class QuizHomePage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Quiz Home Page'),
-      ),
-      body: Center(
-        child: Text('Welcome to the Quiz App!'),
-      ),
-    );
-  }
-}
+
