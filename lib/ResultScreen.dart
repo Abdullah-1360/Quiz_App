@@ -15,32 +15,34 @@ class ResultScreen extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.blue[200],
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              'Your Score is:',
-              style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
-            ),
-            SizedBox(height: 20),
-            Text(
-              '$score / $total',
-              style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold, color: Colors.green),
-            ),
-            SizedBox(height: 40),
-            ElevatedButton(
-              onPressed: () {
-                // Navigate back to Home Screen and remove all previous routes
-                Navigator.pushAndRemoveUntil(
-                  context,
-                  MaterialPageRoute(builder: (context) => HomeScreen()),
-                      (route) => false,  // Remove all the routes
-                );
-              },
-              child: Text('Go to Home'),
-            ),
-          ],
+      body: SingleChildScrollView(
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                'Your Score is:',
+                style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+              ),
+              SizedBox(height: 20),
+              Text(
+                '$score / $total',
+                style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold, color: Colors.green),
+              ),
+              SizedBox(height: 40),
+              ElevatedButton(
+                onPressed: () {
+                  // Navigate back to Home Screen and remove all previous routes
+                  Navigator.pushAndRemoveUntil(
+                    context,
+                    MaterialPageRoute(builder: (context) => HomeScreen()),
+                        (route) => false,  // Remove all the routes
+                  );
+                },
+                child: Text('Go to Home'),
+              ),
+            ],
+          ),
         ),
       ),
     );

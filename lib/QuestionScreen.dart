@@ -39,6 +39,8 @@ class _QuestionScreenState extends State<QuestionScreen> {
         _currentQuestionIndex += 1;
       });
     } else {
+       // Navigate to the result screen
+
       // Navigate to the result screen
       Navigator.pushReplacement(
         context,
@@ -57,21 +59,23 @@ class _QuestionScreenState extends State<QuestionScreen> {
         title: Text('Quiz Questions'),
         backgroundColor: Colors.blue[200],
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
 
-          children: [
-            Text(
-              _questions[_currentQuestionIndex]['question'] as String,
-              style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),
-            ),
-            SizedBox(height: 20),
-            Column(
-              children: _buildOptions(), // This is a helper function to build the options
-            ),
-          ],
+            children: [
+              Text(
+                _questions[_currentQuestionIndex]['question'] as String,
+                style: const TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(height: 20),
+              Column(
+                children: _buildOptions(), // This is a helper function to build the options
+              ),
+            ],
+          ),
         ),
       ),
     );

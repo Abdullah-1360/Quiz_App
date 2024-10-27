@@ -10,16 +10,18 @@ class HomeScreen extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.blue[200],
       ),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            // Navigate to Question Screen
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => QuestionScreen()),
-            );
-          },
-          child: Text('Start Quiz'),
+      body: SingleChildScrollView(
+        child: Center(
+          child: ElevatedButton(
+            onPressed: () {
+              // Navigate to Question Screen
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => QuestionScreen()),
+              );
+            },
+            child: Text('Start Quiz'),
+          ),
         ),
       ),
     );
